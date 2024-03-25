@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DesignPatterns.Duck.Fly;
-using DesignPatterns.Duck.Quack;
+using DesignPatterns.StrategyPattern.Fly;
+using DesignPatterns.StrategyPattern.Quack;
 
-namespace DesignPatterns.Duck
+namespace DesignPatterns.StrategyPattern
 {
     internal class Duck : IFlyBehaviour, IQuackBehaviour
     {

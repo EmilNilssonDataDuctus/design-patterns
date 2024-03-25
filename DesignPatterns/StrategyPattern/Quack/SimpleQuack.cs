@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Duck.Quack
+namespace DesignPatterns.StrategyPattern.Quack
 {
     internal class SimpleQuack : IQuackBehaviour
     {

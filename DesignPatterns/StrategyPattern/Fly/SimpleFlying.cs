@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Duck.Fly
+namespace DesignPatterns.StrategyPattern.Fly
 {
     internal class SimpleFlying : IFlyBehaviour
     {

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Duck.Quack
+namespace DesignPatterns.Observerpattern.ExampleClasses
 {
-    internal interface IQuackBehaviour
+    internal interface IConcreteObserver
     {
-        void Quack();
+        void customObserverMethod();
     }
 }
