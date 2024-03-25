@@ -7,9 +7,11 @@ using DesignPatterns.Observerpattern;
 using System;
 
 Console.WriteLine("Hello, World!");
-
-var myDuck = new Duck(new SimpleFlying(), new SimpleQuack());
+var simpleFlying = new SimpleFlying();
+var simpleQuack = new SimpleQuack();
+var myDuck = new Duck(simpleFlying, simpleQuack);
 myDuck.Quack();
+myDuck.Fly();
 
 var weatherStation = new WeatherStation() { };
 
