@@ -26,39 +26,55 @@ weatherStation.add(myMomsPhoneDisplay);
 
 bool running = true;
 
-Console.WriteLine("1. Say Hello");
-Console.WriteLine("2. Say Goodbye");
-Console.WriteLine("3. Quack");
-Console.WriteLine("4. Fly");
-Console.WriteLine("5. Update all weatherapp displays about weather change");
-Console.WriteLine("0. Exit");
+static void ShowChoices()
+{
+    Console.WriteLine("1. Say Hello");
+    Console.WriteLine("2. Say Goodbye");
+    Console.WriteLine("3. Quack");
+    Console.WriteLine("4. Fly");
+    Console.WriteLine("5. Update all weatherapp displays about weather change");
+    Console.WriteLine("s. See choices");
+    Console.WriteLine("q. Exit");
+}
+ShowChoices();
 
 while (running)
 {
-    Console.Write("Enter your choice: ");
+    Console.Write("(s: see choices)\nEnter your choice:");
     string choice = Console.ReadLine();
 
     switch (choice)
     {
         case "1":
+            Console.Clear();
             Console.WriteLine("Hello!");
             break;
         case "2":
+            Console.Clear();
             Console.WriteLine("Goodbye!");
             break;
         case "3":
+            Console.Clear();
             myDuck.Quack();
             break;
         case "4":
+            Console.Clear();
             myDuck.Fly();
             break;
         case "5":
+            Console.Clear();
             weatherStation.notify();
             break;
+        case "s":
+            Console.Clear();
+            ShowChoices();
+            break;
         case "0":
+        case "q":
             running = false;
             break;
         default:
+            Console.Clear();
             Console.WriteLine("Invalid choice. Please try again.");
             break;
     }
