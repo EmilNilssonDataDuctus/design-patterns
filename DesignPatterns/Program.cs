@@ -5,7 +5,11 @@ using DesignPatterns.StrategyPattern.Fly;
 using DesignPatterns.StrategyPattern.Quack;
 using DesignPatterns.Observerpattern;
 using System;
+using DesignPatterns.DecoratorPattern;
+using DesignPatterns.DecoratorPattern.BadExample;
+using DesignPatterns.DecoratorPattern.Decorators;
 
+// Strategy Pattern
 Console.WriteLine("Hello, World!");
 var simpleFlying = new SimpleFlying();
 var simpleQuack = new SimpleQuack();
@@ -13,6 +17,8 @@ var myDuck = new Duck(simpleFlying, simpleQuack);
 myDuck.Quack();
 myDuck.Fly();
 
+
+// Observer Pattern
 var weatherStation = new WeatherStation() { };
 
 var myPhoneDisplay = new PhoneDisplay(weatherStation, "Emil") { };
@@ -22,6 +28,29 @@ var myMomsPhoneDisplay = new PhoneDisplay(weatherStation, "Mom") { };
 weatherStation.add(myPhoneDisplay);
 weatherStation.add(myFriendsPhoneDisplay);
 weatherStation.add(myMomsPhoneDisplay);
+
+// Decorator Pattern
+// Not allowed since Beverage is an abstract class
+// var myBeverage = new Beverage();
+
+// I'd like to order an Espresso
+var myEspresso = new Espresso();
+myEspresso.getDesc();
+
+// I'd like to add caramel to my Espresso
+var myEspressoWithCaramel = new CaramelDecorator(myEspresso);
+myEspressoWithCaramel.getDesc();
+
+// I'd like to add soy to my caramel Espresso
+var myEspressoWithCaramelAndSoy = new SoyDecorator(myEspressoWithCaramel);
+Console.WriteLine("My drink");
+myEspressoWithCaramelAndSoy.getDesc();
+
+
+// I'd like to order an additional soy-caramel espresso for my friend
+var myfriendsHotBeverage = new SoyDecorator(new CaramelDecorator(new Espresso()));
+Console.WriteLine("My friends drink");
+myfriendsHotBeverage.getDesc();
 
 
 bool running = true;
